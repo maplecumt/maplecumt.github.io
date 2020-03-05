@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>jest自动化测试简介 | Maple&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Auto Test">
+  
+  
+  
+  
+  <meta name="keywords" content="Auto Test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jest自动化测试简介">
+<meta property="og:url" content="http://blog.maple-yf.com/2018/01/08/2018-01-08-jest-introduction/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/jest/jest.png">
+<meta property="og:updated_time" content="2020-03-05T03:55:35.780Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jest自动化测试简介">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/jest/jest.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Maple&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/maple.ico">
+  <link rel="apple-touch-icon" href="/css/images/maple.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css">
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css">
+  
+
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            
+            
+              <a class="brand" style="
+                 border-width: 0px;  margin-top: 20px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="145px" style="opacity: 0.85" alt="M Icon" src="/css/images/M.png">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer article-content">
+        
+          <section id="main" style="float:none;"><article id="post-2018-01-08-jest-introduction" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Jest自动化测试简介
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/01/08/2018-01-08-jest-introduction/" class="article-date">
+	  <time datetime="2018-01-07T16:00:00.000Z" itemprop="datePublished">2018-01-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/jest/jest.png" alt><br><a id="more"></a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Jest 被 Facebook 用来测试包括 React 应用在内的所有 JavaScript 代码。Jest 的一个理念是提供一套完整集成的 “零配置” 测试体验。</p>
+<h1 id="基础测试"><a href="#基础测试" class="headerlink" title="基础测试"></a>基础测试</h1><p>通过test和expect函数来完成一次最简单的测试：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> sum <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./sum'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'adds 1 + 2 to equal 3'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果sum函数返回的值就行我们测试描述的那样是3的话，测试通过。</p>
+<h1 id="结合enzyme"><a href="#结合enzyme" class="headerlink" title="结合enzyme"></a>结合enzyme</h1><p>enzyme是aribnb开源的一套测试React的库。它提供的mount方法可以模拟React里的render生成对应的DOM字符串，另外还提供了类似simulate的方法用来模拟事件操作。比如下边的测试例子：</p>
+<pre class="line-numbers language-jsx"><code class="language-jsx"><span class="token function">it</span><span class="token punctuation">(</span><span class="token string">"should provide the actions and subscribe to changes"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    store<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> count<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> Comp <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> count<span class="token punctuation">,</span> increment <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span>increment<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword">const</span> mapToProps <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> count <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">{</span> count <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> actions <span class="token operator">=</span> store <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+        increment<span class="token punctuation">:</span> state <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span><span class="token punctuation">{</span> count<span class="token punctuation">:</span> state<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> ConnectedComp <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>mapToProps<span class="token punctuation">,</span> actions<span class="token punctuation">)</span><span class="token punctuation">(</span>Comp<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Provider</span> <span class="token attr-name">store</span><span class="token script language-javascript"><span class="token punctuation">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ConnectedComp</span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Provider</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword">const</span> wrapper <span class="token operator">=</span> <span class="token function">mount</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>App</span> <span class="token punctuation">/></span></span><span class="token punctuation">)</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>wrapper<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">"&lt;h1>0&lt;/h1>"</span><span class="token punctuation">)</span>
+    wrapper<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">simulate</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">)</span>
+    wrapper<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">simulate</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">)</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>wrapper<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">"&lt;h1>2&lt;/h1>"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用mount方法模拟render，通过html方法把DOM结构转换成字符串，通过simulate来模拟单击事件。从而完成整个测试用例。</p>
+<h1 id="快照测试"><a href="#快照测试" class="headerlink" title="快照测试"></a>快照测试</h1><p>enzyme里提供的方法都是基于React的，但是对于类React库而言，这些并不能使用比如Rax。不过，Jest提供了一种快照测试，可以通过快照的方式这是render后的DOM结构。</p>
+<p>快照测试是通过记录React结构树快照或其他可序列化的值，来简化 Ui 测试，并分析state如何随时间变化而改变。</p>
+<p>一个典型的快照测试案例是，为移动端应用的UI组件截个图，和需要测试参考图进行比较。如果两张图片不一致，说明测试不通过：可能是非法修改造成的，也可能是UI组件未及时render造成的。</p>
+<h2 id="Jest-Snapshot"><a href="#Jest-Snapshot" class="headerlink" title="Jest Snapshot"></a>Jest Snapshot</h2><p>在测试react组件时，也可以采用相同的思路进行快照测试。只不过，我们不是通过截图对比，而是保存render时所生成的序列化React tree。例如：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">'../Link.react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> renderer <span class="token keyword">from</span> <span class="token string">'react-test-renderer'</span><span class="token punctuation">;</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'renders correctly'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> tree <span class="token operator">=</span> renderer
+        <span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Link page<span class="token operator">=</span><span class="token string">"http://www.facebook.com"</span><span class="token operator">></span>Facebook<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toMatchSnapshot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="生成-snapshot-file"><a href="#生成-snapshot-file" class="headerlink" title="生成 snapshot file"></a>生成 snapshot file</h2><p>第一次运行该测试脚本时，Jest会自动生成一个 snapshot file，路径默认是 <code>./__snapshot__</code>。文件内容如下所示：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">exports<span class="token punctuation">[</span><span class="token template-string"><span class="token string">`renders correctly 1`</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+&lt;a
+    className="normal"
+    href="http://www.facebook.com"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+>
+    Facebook
+&lt;/a>
+`</span></span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>之后再次运行测试脚本的时候，Jest会自动比对render输出的结果和之前的snapshot file的差异，如果相同，则测试通过。</p>
+<h2 id="更新-snapshot-file"><a href="#更新-snapshot-file" class="headerlink" title="更新 snapshot file"></a>更新 snapshot file</h2><p>由于每次运行结果都会和第一次的 snapshot file 进行比对，如果我想更换比对的 snapshot file文件内容，应该怎么办呢？</p>
+<p>首先，假如我们有如下场景，更换前面的Link组件的链接，代码如下：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">'../Link.react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> renderer <span class="token keyword">from</span> <span class="token string">'react-test-renderer'</span><span class="token punctuation">;</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'renders correctly'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> tree <span class="token operator">=</span> renderer
+        <span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Link page<span class="token operator">=</span><span class="token string">"http://www.instagram.com"</span><span class="token operator">></span>Facebook<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">></span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">toJSON</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>tree<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toMatchSnapshot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这时，运行测试脚本时，测试失败。因为render出的快照结果和本次存储的初次 snapshot file内容不一致。此时，如果我想把本次的render结果作为 snapshot file的内容供以后测试比对，可以运行一下命令进行更新：</p>
+<pre><code>jest --updateSnapshot
+</code></pre><h2 id="rax-test-renderer"><a href="#rax-test-renderer" class="headerlink" title="rax-test-renderer"></a>rax-test-renderer</h2><p>针对Rax测试，官方提供了一个对应的npm包，<a href="https://github.com/alibaba/rax/tree/master/packages/rax-test-renderer" target="_blank" rel="noopener">rax-test-renderer</a>。</p>
+<p>利用它提供的renderer替换react的renderer就可以对rax进行快照测试了。</p>
+<h1 id="异步测试"><a href="#异步测试" class="headerlink" title="异步测试"></a>异步测试</h1><p>使用Jest进行异步测试，有以下三种方式。</p>
+<h2 id="assertions"><a href="#assertions" class="headerlink" title="assertions"></a>assertions</h2><p>通过断言的方式进行测试，所调用的异步方法必须返回一个promise对象。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'works with promises'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    expect<span class="token punctuation">.</span><span class="token function">assertions</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> user<span class="token punctuation">.</span><span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=</span><span class="token operator">></span> <span class="token function">expect</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token string">'Mark'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2><p>使用这种方式，更显得简单一些，可以和之前的同步测试一样的思路写测试用例。只不过，在异步方法前边加上await关键字用来表示异步执行。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'works with async/await'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    expect<span class="token punctuation">.</span><span class="token function">assertions</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> user<span class="token punctuation">.</span><span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token string">'Mark'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="done"><a href="#done" class="headerlink" title="done"></a>done</h2><p>done是异步测试的一种弥补方式，如果需要测试的异步方法没办法返回promise或者不方便转换成async/await的写法，可以通过done方法来实现这种场景的异步测试。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'the data is peanut butter'</span><span class="token punctuation">,</span> done <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">callback</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">expect</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'peanut butter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">fetchData</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>例如上边的例子，callback是一个异步调用，正常的测试流程下，是不会等着回调再进行测试的。所以Jest加入done方法，done方法被调用的时候，整条测试才会完成。如果done一直没有调用，则测试失败。</p>
+<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><p>Jest提供了非常丰富的测试API，一共分为以下几类。</p>
+<h2 id="Globals"><a href="#Globals" class="headerlink" title="Globals"></a>Globals</h2><p>全局API：在测试工程中，这些方法或对象直接放到了全局环境中，不需要额外的引入。其中比较常用的有afterAll(fn, timeout)、afterEach(fn, timeout)、beforeAll(fn, timeout)、beforeEach(fn, timeout)，分别表示所有测试结束时调用，每个测试结束时调用，所有测试开始前调用，每个测试开始前调用。</p>
+<h2 id="Expect"><a href="#Expect" class="headerlink" title="Expect"></a>Expect</h2><p>这是Jest的关键API，通过expect对象提供的方法，我们用来描述期望得到的结果。expect.toBe() expect.toEqual() expect.toMatch() expect.toMatchObject()等。</p>
+<h2 id="Mock-Functions"><a href="#Mock-Functions" class="headerlink" title="Mock Functions"></a>Mock Functions</h2><p>用来测试函数的间接调用过程，并把调用过程中的返回信息存储下来。比如测试forEach的调用过程，为传入的数组中的每个元素调用一个回调函数。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//通过jest.fn()创建供forEach调用的回调函数</span>
+<span class="token keyword">const</span> mockCallback <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> mockCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 此模拟函数被调用了两次</span>
+<span class="token comment" spellcheck="true">//mockCallback.mock.calls中记录了每次调用的结果</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>mockCallback<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>calls<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 第一次调用函数时的第一个参数是 0</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>mockCallback<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>calls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 第二次调用函数时的第一个参数是 1</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>mockCallback<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>calls<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="The-Jest-Object"><a href="#The-Jest-Object" class="headerlink" title="The Jest Object"></a>The Jest Object</h2><p>jest是一个全局对象，在测试文件中可以直接调用。比如上边的例子中的jest.fn()。jest对象里提供了一些系统方法，可以工号的控制整个测试行为和流程。</p>
+<h2 id="Configuring-Jest"><a href="#Configuring-Jest" class="headerlink" title="Configuring Jest"></a>Configuring Jest</h2><p>Jest的配置可以直接在package.json中进行设置。</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token property">"jest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"verbose"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>/*展示详细的测试结果*/
+    <span class="token property">"moduleFileExtensions"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"jsx"</span><span class="token punctuation">,</span> <span class="token string">"js"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token property">"setupFiles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"&lt;rootDir>/config/testSetup.js"</span> /*配置入口文件*/
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"transformIgnorePatterns"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"node_modules/(?!(FOXRax)/)"</span> /*不忽略node_modules中指定模块的ES6转换(默认情况下，transform转换不作用于node_modules中的模块<span class="token punctuation">)</span>*/
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"transform"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        "^.+\\.(js|jsx<span class="token punctuation">)</span>$"<span class="token operator">:</span> <span class="token string">"babel-jest"</span> /*js、jsx指定babel转换*/
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"testMatch"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        "&lt;rootDir>/src/**/*.spec.(js|jsx<span class="token punctuation">)</span>" /*测试文件匹配*/
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Jest-CLI-Options"><a href="#Jest-CLI-Options" class="headerlink" title="Jest CLI Options"></a>Jest CLI Options</h2><p>Jest命令行工具也提供了一些实用的选项。当然，命令行选项也可以在配置文件里设置。比如比较实用的 <code>--json --outputFile=&lt;filename&gt;</code> 的配合使用就可以以json的格式把测试结果输出到本地文件中。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest" target="_blank" rel="noopener">http://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest</a></li>
+<li><a href="https://facebook.github.io/jest/docs/en/api.html" target="_blank" rel="noopener">https://facebook.github.io/jest/docs/en/api.html</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/WeChat.jpg',
+  alipayImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/Alipay.jpg'
+});
+</script>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Auto-Test/">Auto Test</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/20/introduction-of-softweare-release-lifecycle/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          软件开发生命周期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/08/2018-01-08-residual-poem/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">残诗</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础测试"><span class="nav-number">2.</span> <span class="nav-text">基础测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结合enzyme"><span class="nav-number">3.</span> <span class="nav-text">结合enzyme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快照测试"><span class="nav-number">4.</span> <span class="nav-text">快照测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jest-Snapshot"><span class="nav-number">4.1.</span> <span class="nav-text">Jest Snapshot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成-snapshot-file"><span class="nav-number">4.2.</span> <span class="nav-text">生成 snapshot file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-snapshot-file"><span class="nav-number">4.3.</span> <span class="nav-text">更新 snapshot file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rax-test-renderer"><span class="nav-number">4.4.</span> <span class="nav-text">rax-test-renderer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步测试"><span class="nav-number">5.</span> <span class="nav-text">异步测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#assertions"><span class="nav-number">5.1.</span> <span class="nav-text">assertions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-await"><span class="nav-number">5.2.</span> <span class="nav-text">async/await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#done"><span class="nav-number">5.3.</span> <span class="nav-text">done</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API"><span class="nav-number">6.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Globals"><span class="nav-number">6.1.</span> <span class="nav-text">Globals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expect"><span class="nav-number">6.2.</span> <span class="nav-text">Expect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mock-Functions"><span class="nav-number">6.3.</span> <span class="nav-text">Mock Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Jest-Object"><span class="nav-number">6.4.</span> <span class="nav-text">The Jest Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuring-Jest"><span class="nav-number">6.5.</span> <span class="nav-text">Configuring Jest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jest-CLI-Options"><span class="nav-number">6.6.</span> <span class="nav-text">Jest CLI Options</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+  <canvas id="live2dcanvas" width="300" height="600" class="live2d"></canvas>
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/haruto.model.json", 0.5);});
+})();
+</script>
+
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style></section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Maple&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<!--  <p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+          -->
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Maple&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 maple.yf All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Maple&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Maple&#39;s Blog">
+<meta property="og:url" content="http://blog.maple-yf.com/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maple&#39;s Blog">
+  
+    <link rel="alternate" href="/atom.xml" title="Maple&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/maple.ico">
+  <link rel="apple-touch-icon" href="/css/images/maple.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  
+    <link rel="stylesheet" href="/css/home.css">
+  
+
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css">
+  
+
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+
+
+  <body>
+
+
+  
+    <header id="header">
+
+    
+      <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(); background-size: auto 100%;">
+
+      <!-- Support rolling -->  
+        
+        <section class="awSlider">
+          <div class="carousel slide carousel-fade " data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+               
+                  
+                    <div class="item active">
+                  
+                    <img id="carousel-img0" src="/css/images/pose.jpg">
+                  </div>
+
+                  <!-- 自适应大图 -->
+                  <script>
+                      var img0 = new Image();
+                      var imageTag0 = document.getElementById("carousel-img0");
+                      img0.src = imageTag0.src;
+                      img0.onload=function(){
+                        if (img0.width / img0.height <= document.body.clientWidth / document.body.clientHeight) {
+                          imageTag0.style.width = document.body.clientWidth + "px";
+                        } else {
+                          imageTag0.style.height = document.body.clientHeight + "px";
+                          imageTag0.style.marginLeft = -(document.body.clientHeight * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
+                        }
+                      };
+                  </script>
+                
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Geri</span>
+            </a>
+            <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">İleri</span>
+            </a>
+          </div>
+        </section>
+        <script>
+          $('section.awSlider .carousel').carousel({
+              pause: '',
+              interval: 5000
+          });
+          var startImage = $('section.awSlider .item.active > img').attr('src');
+          $('section.awSlider .carousel').on('slid.bs.carousel', function () {
+              var bscn = $(this).find('.item.active > img').attr('src');
+              $('section.awSlider > img').attr('src', bscn);
+          });
+        </script>
+      
+
+    
+ 
+
+
+    <canvas width="100%" height="100%"></canvas>
+    <script>
+      var c = document.getElementsByTagName('canvas')[0],
+          x = c.getContext('2d'),
+          w = window.innerWidth,
+          h = window.innerHeight,
+          pr = window.devicePixelRatio || 1,
+          f = 90,
+          q,
+          m = Math,
+          r = 0,
+          u = m.PI*2,
+          v = m.cos,
+          z = m.random
+      c.width = w*pr
+      c.height = h*pr
+      x.scale(pr, pr)
+      x.globalAlpha = 0.6
+
+      
+    </script>
+    
+
+    
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
+    
+
+        
+          <div class="homelogoback"  style="border: 1px solid #404040;" >
+            <h1><a href="#content" id="logo">Maple&#39;s Blog</a></h1>
+            <h3></h3>
+            <h5>maple.yf</h5>
+            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
+          </div>
+        
+    
+    </div>
+  </div>
+
+  <!-- 自适应主页背景大图 -->
+  
+
+ <!-- home_logo_image居中 -->
+ 
+    <script>
+        var homelogodiv = document.getElementById("homelogo");
+        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
+          homelogodiv.style.width = document.body.clientWidth + "px";
+          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+        } else {
+          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
+          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+        }
+    </script>
+  
+
+  <div class="intro-navigate">
+      <p class="navigater-list">
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </p>
+  </div>
+
+</header>
+  
+  <div id="container">
+    <div id="wrap">
+      
+            
+      <div id="content" class="outer article-content">
+        
+          <section id="main" style="float:none;">
+  
+    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/05/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/03/05/hello-world/" class="article-date">
+	  <time datetime="2020-03-05T03:55:35.781Z" itemprop="datePublished">2020-03-05</time>
+	</a>
+
+      
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2017-07-21-raining-night"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/05/2017-07-21-raining-night/">夜雨</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/03/05/2017-07-21-raining-night/" class="article-date">
+	  <time datetime="2020-03-05T03:55:35.779Z" itemprop="datePublished">2020-03-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Poetry/">Poetry</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2020/03/05/2017-07-21-raining-night/" class="article-excerpt-container">
+          <p><br><br><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/poetry/raining-night.jpg" alt><br>
+        </div>
+        <!-- 
+雷隐隐，风悄悄这整夜的雨淅淅沥沥潇潇...  -->
+        <p class="article-more-link">
+          <a href="/2020/03/05/2017-07-21-raining-night/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Poetry/">Poetry</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2017-08-27-plantuml"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/05/2017-08-27-plantuml/">plantuml简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/03/05/2017-08-27-plantuml/" class="article-date">
+	  <time datetime="2020-03-05T03:55:35.779Z" itemprop="datePublished">2020-03-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2020/03/05/2017-08-27-plantuml/" class="article-excerpt-container">
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>最近在学习设计模式，但是在画类图的时候，有一堆的画图工具可以选择，但总感觉用的不顺手。于是在网上找到了这个神奇的语言。PlantUML是一个开源项目，支持时序图、用例图、类图、活动图、组件图、状态图、对象图等的绘制。简而言之，就是用写代码的方式画图。几行代码，输出标准结构图，不用再去考虑结构、对齐等琐事啦！</p>
+<h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><p>如下简单的语法表达类图之间的关系</p>
+<pre><code>@startuml
+Class01 &lt;|-- Class02
+Class03 &lt;|.. Class04
+Class05 *-- Class06
+Class07 o-- Class08
+Class09 &lt;.. Class10
+Class11 &lt;-- Class12
+@enduml
+</code></pre>
+        </div>
+        <!-- 简介最近在学习设计模式，但是在画类图的时候，有一堆的画图工具可以选择，但总感觉用的不顺手。于是在网上找到了这个神奇的语言。PlantUML是一个开源项目，支持时序图、用例图、类图、活动图、组件图、状态图、对象图等的绘制。简而言之，就是用写代码的方式画图。几行代码，输出标准结构图，不用再去考虑结构、对齐等琐事啦！
+效果预览如下简单的语法表达类图之间的关系
+@startuml
+Class01 &......  -->
+        <p class="article-more-link">
+          <a href="/2020/03/05/2017-08-27-plantuml/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UML/">UML</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2017-07-20-vscode-introduction"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/05/2017-07-20-vscode-introduction/">前端编程利器VS Code</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/03/05/2017-07-20-vscode-introduction/" class="article-date">
+	  <time datetime="2020-03-05T03:55:35.778Z" itemprop="datePublished">2020-03-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2020/03/05/2017-07-20-vscode-introduction/" class="article-excerpt-container">
+          <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/icon.png" alt><br>
+        </div>
+        <!-- 
+前言前端同学使用的编辑器可选范围非常广泛。
+最开始接触到前端的时候，听说了Dreamweaver这么一个强大的软件，但严格意义上讲，这不能算作一个编辑器。后来认识了NotePad++，在当时，这确实是一款非常好用的编辑器，语法高亮的友好度仅次于IDE，而且占用内存小，运行非常流畅。
+再然后，有人推荐Sublime。我用的时候，还是Sublime 2，最吸引我的是它的mini map，拖动m......  -->
+        <p class="article-more-link">
+          <a href="/2020/03/05/2017-07-20-vscode-introduction/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2017-02-07-snow"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/05/2017-02-07-snow/">吹雪</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/03/05/2017-02-07-snow/" class="article-date">
+	  <time datetime="2020-03-05T03:55:35.777Z" itemprop="datePublished">2020-03-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Poetry/">Poetry</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2020/03/05/2017-02-07-snow/" class="article-excerpt-container">
+          <p><br><br><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/poetry/snow.jpg" alt><br>
+        </div>
+        <!-- 
+我经历了一次美丽的邂逅是这突如其来的吹雪轻轻吻向泥土的等候洁白在灯光交汇下漫天轻柔伴着人们心满意足的步调目睹了一对对静静地走到白头...  -->
+        <p class="article-more-link">
+          <a href="/2020/03/05/2017-02-07-snow/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Poetry/">Poetry</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2016-06-25-say-goodbye"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/05/2016-06-25-say-goodbye/">不得不说再见</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/03/05/2016-06-25-say-goodbye/" class="article-date">
+	  <time datetime="2020-03-05T03:55:35.777Z" itemprop="datePublished">2020-03-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Poetry/">Poetry</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2020/03/05/2016-06-25-say-goodbye/" class="article-excerpt-container">
+          <p><br><br><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/poetry/say-goodbye.jpg" alt><br>
+        </div>
+        <!-- 
+终于这宴席还是要散场请不要为我鼓掌也不要欢送潺潺的流水在为我歌唱盛放的蔷薇散发着芬芳河边的杨柳也在轻轻地飘荡夏天总因离别变得黯然惆怅还想再听一听丰富多彩的课堂还想再逛一逛青春洋溢的操场还想再聊一聊槽点满满的旧日时光还想，还想……别了校园，别了矿大别了那逝去的青春模样南湖上升起的月光请替我守护这片温馨的土壤我在下一个路口等待青春不散场...  -->
+        <p class="article-more-link">
+          <a href="/2020/03/05/2016-06-25-say-goodbye/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Poetry/">Poetry</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2016-04-29-jekyll-install"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/03/05/2016-04-29-jekyll-install/">安装静态博客Jekyll</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/03/05/2016-04-29-jekyll-install/" class="article-date">
+	  <time datetime="2020-03-05T03:55:35.776Z" itemprop="datePublished">2020-03-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2020/03/05/2016-04-29-jekyll-install/" class="article-excerpt-container">
+          <p><a href="http://jekyll.bootcss.com/" title="Jekyll" target="_blank" rel="noopener">Jekyll</a>是一种纯文本的静态博客，安装成功之后，直接通过markdown文本就可以更新博客内容。Jekyll的安装过程比较简单，但是安装的过程中仍然会跳进很多坑。Jekyll和<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>是一种很好的结合。Github Pages是github提供的一个可以免费部署个人网站且没有存储上限的一个功能。在Jekyll的官网里也有把Jekyll<a href="http://jekyll.bootcss.com/docs/github-pages/" target="_blank" rel="noopener">部署到Github Pages上的教程。</a></p>
+<h2 id="安装Jekyll"><a href="#安装Jekyll" class="headerlink" title="安装Jekyll"></a>安装Jekyll</h2><p>如果需要部署到Github Pages，Jekyll需要在本地完成安装，然后再进行部署。Jekyll的安装智能在Linux和Mac OS X上进行，另外，其依赖Ruby和RubyGems，建议安装rvm来控制Ruby的版本。Linux和Mac OS X一般都会有系统自带的Ruby，但是版本比较旧，通过</p>
+<pre><code data-trim class="bash">
+ruby -v
+</code></pre>
+        </div>
+        <!-- Jekyll是一种纯文本的静态博客，安装成功之后，直接通过markdown文本就可以更新博客内容。Jekyll的安装过程比较简单，但是安装的过程中仍然会跳进很多坑。Jekyll和Github Pages是一种很好的结合。Github Pages是github提供的一个可以免费部署个人网站且没有存储上限的一个功能。在Jekyll的官网里也有把Jekyll部署到Github Pages上的教程。......  -->
+        <p class="article-more-link">
+          <a href="/2020/03/05/2016-04-29-jekyll-install/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jekyll/">Jekyll</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-introduction-of-softweare-release-lifecycle"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/01/20/introduction-of-softweare-release-lifecycle/">软件开发生命周期</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/01/20/introduction-of-softweare-release-lifecycle/" class="article-date">
+	  <time datetime="2018-01-19T16:00:00.000Z" itemprop="datePublished">2018-01-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2018/01/20/introduction-of-softweare-release-lifecycle/" class="article-excerpt-container">
+          <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/introduction-of-software-release-life-cycle/software-release-life-cycle.jpg" alt><br>
+        </div>
+        <!-- 
+前言最近研究React的时候，看到这样一个版本号 React 16 RC，非常疑惑，不知道这里的RC到底是什么意思。
+软件版本周期查了相关资料才知道，这个和软件版本周期有关，然后在Wikipedia里找到了这张图，这是经过优化过的，原图比较丑^_^。
+
+从图中可以看到，软件的整个版本周期包括两个大的部分：开发测试阶段和发布阶段。
+开发测试阶段有我们比较熟悉的alpha、beta，以及在此之......  -->
+        <p class="article-more-link">
+          <a href="/2018/01/20/introduction-of-softweare-release-lifecycle/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IT/">IT</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2018-01-08-jest-introduction"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/01/08/2018-01-08-jest-introduction/">Jest自动化测试简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/01/08/2018-01-08-jest-introduction/" class="article-date">
+	  <time datetime="2018-01-07T16:00:00.000Z" itemprop="datePublished">2018-01-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2018/01/08/2018-01-08-jest-introduction/" class="article-excerpt-container">
+          <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/jest/jest.png" alt><br>
+        </div>
+        <!-- 
+简介Jest 被 Facebook 用来测试包括 React 应用在内的所有 JavaScript 代码。Jest 的一个理念是提供一套完整集成的 “零配置” 测试体验。
+基础测试通过test和expect函数来完成一次最简单的测试：
+const sum = require('./sum');
+
+test('adds 1 + 2 to equal 3', () => {
+    expec......  -->
+        <p class="article-more-link">
+          <a href="/2018/01/08/2018-01-08-jest-introduction/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Auto-Test/">Auto Test</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+    <article id="post-2018-01-08-residual-poem"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/01/08/2018-01-08-residual-poem/">残诗</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/01/08/2018-01-08-residual-poem/" class="article-date">
+	  <time datetime="2018-01-07T16:00:00.000Z" itemprop="datePublished">2018-01-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Poetry/">Poetry</a>
+
+      
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div href="/2018/01/08/2018-01-08-residual-poem/" class="article-excerpt-container">
+          <p><br><br><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/poetry/residual-poetry.jpg" alt><br>
+        </div>
+        <!-- 
+你不经意间扣开了我的心窗点亮了一点小小的希望像深秋夜空中细细的星子美得清澈又无可奈何的渺茫...  -->
+        <p class="article-more-link">
+          <a href="/2018/01/08/2018-01-08-residual-poem/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Poetry/">Poetry</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style>
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+      </div>
+      
+        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Maple&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<!--  <p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+          -->
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+  <script src="/js/home.js"></script>
+
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Maple&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 maple.yf All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+</body>
+</html>
