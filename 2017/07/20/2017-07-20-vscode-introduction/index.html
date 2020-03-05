@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>前端编程利器vs code | Maple&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="VS Code">
+  
+  
+  
+  
+  <meta name="keywords" content="VS Code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端编程利器VS Code">
+<meta property="og:url" content="http://blog.maple-yf.com/2017/07/20/2017-07-20-vscode-introduction/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/icon.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/js-intelligence.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/format-document.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/auto-save.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/terminal.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/git-history.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/git-project-manager.gif">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/806919-0c09d650b1b21143.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/git-lens.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/blame-annotations.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/status-bar-blame.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/interactive-blame.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/quick-menu.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-messages.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-author01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-author02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-filename01.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-filename02.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/project-manager-commands.png">
+<meta property="og:updated_time" content="2020-03-05T04:38:56.123Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端编程利器VS Code">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/icon.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Maple&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/maple.ico">
+  <link rel="apple-touch-icon" href="/css/images/maple.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css">
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css">
+  
+
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            
+            
+              <a class="brand" style="
+                 border-width: 0px;  margin-top: 20px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="145px" style="opacity: 0.85" alt="M Icon" src="/css/images/M.png">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer article-content">
+        
+          <section id="main" style="float:none;"><article id="post-2017-07-20-vscode-introduction" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      前端编程利器VS Code
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/07/20/2017-07-20-vscode-introduction/" class="article-date">
+	  <time datetime="2017-07-19T16:00:00.000Z" itemprop="datePublished">2017-07-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/icon.png" alt><br><a id="more"></a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前端同学使用的编辑器可选范围非常广泛。</p>
+<p>最开始接触到前端的时候，听说了<a href="http://www.adobe.com/cn/products/dreamweaver.html" target="_blank" rel="noopener">Dreamweaver</a>这么一个强大的软件，但严格意义上讲，这不能算作一个编辑器。后来认识了NotePad++，在当时，这确实是一款非常好用的编辑器，语法高亮的友好度仅次于IDE，而且占用内存小，运行非常流畅。</p>
+<p>再然后，有人推荐<a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime</a>。我用的时候，还是Sublime 2，最吸引我的是它的mini map，拖动mini map快速浏览大段大段的代码，比拖动小小的滑块酸爽很多呀。再加上后来安装的各种插件，感觉我进入了一个全新的世界，Sublime才是我最想用的编辑器呀！</p>
+<p>工作之后，听说大家都在用<a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">webstorm</a>，于是我也安装了一个试试，功能确实强大，特别它自带的git管理以及编辑器内部打开terminal的功能，非常适合前端开发。但是，功能强大的webstorm太过于笨重，每次打开的时候都要等一会儿，占用内存太高，同时开启两个项目的时候，电脑就会特别卡，非常影响写代码的心情，而且，webstorm是收费软件，用了一段时间之后果断放弃。</p>
+<p>这时，我尝试了一款觊觎已久的酷炫编辑器 <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a>。用了Atom之后，我才知道了什么叫酷炫！Sublime算什么，我再也不要用那个丑丑的Sublime了。基于<a href="https://zh.wikipedia.org/wiki/Electron_(%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">Electron</a>)（最初以Atom Shell知名）和许可使用<a href="https://zh.wikipedia.org/wiki/Chromium" target="_blank" rel="noopener">Chromium</a>和Node.js的跨平台应用框架，并使用<a href="https://zh.wikipedia.org/wiki/CoffeeScript" target="_blank" rel="noopener">CoffeeScript</a>和<a href="https://zh.wikipedia.org/wiki/LESS_(%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8" target="_blank" rel="noopener">Less</a>)编写。Atom不但酷炫而且强大，因为有着活跃的社区，所以插件非常多，除了满足开发的刚需之外，还有很多想都想不到的插件。但是但是，美中不足的是Atom太卡了，而且用的时候偶尔还会崩溃。坚持用了一个月，最后实在受不了，我又换回Sublime了，但是心中很不甘啊！</p>
+<p>当时我就想着，如果有一款编辑器可以像Sublime一样流程同时又像Atom一样酷炫该有多好。于是，我遇到了VS Code。VS Code刚刚发布Beta版时我尝试着用过一次，当时还不稳定，社区也不完善，插件更是贫乏，所以没留下好印象。这次重新尝试，是因为听说它和Atom一样，也是通过Electron编写的，我想，至少可以像Atom一样酷炫吧。试用之后才发现，原来这才是我一直苦苦寻找的理想编辑器呀！</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>我强烈推荐VS Code的原因是它有以下几大特点：</p>
+<ul>
+<li><strong>酷炫</strong> 和Atom一样采用Electron框架编写，整个软件其实就是一个WebAPP，样式深度定制，酷炫到超乎你想象。如果觉得还不过瘾，可以自己编写theme插件，满足你的各种癖好。</li>
+<li><strong>轻量</strong> 虽然同样是采用Electron框架编写，但是VS Code和Atom走了不同的路线。Atom从一开始就把插件化架构摆在第一位，所以，Atom中最重要的是灵活而又完备的API，性能则不那么重要。VS Code则是把用户体验放在第一位，高性能、更能丰富才是它的首要目的，所以，一开始VS Code的插件系统很糟糕。但是VS Code的性能绝对高出Atom一个档位。</li>
+<li><strong>开源</strong> 继承了Electron的良好基因。</li>
+<li><strong>跨平台</strong> 依然是继承了Electron的良好基因。</li>
+<li><strong>丰富的插件</strong> 虽然不如Sublime和Atom数量多，但现在已经有越来越多的插件涌入。</li>
+<li><strong>活跃的社区</strong> 得益于Electron和Atom，VS Code的社区也是非常的活跃，更加快了插件生态的繁荣。</li>
+</ul>
+<h2 id="自带功能"><a href="#自带功能" class="headerlink" title="自带功能"></a>自带功能</h2><h3 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h3><p>VS Code不需要安装插件，自身就实现了Emmet，默认就是打开的。</p>
+<h3 id="智能感知"><a href="#智能感知" class="headerlink" title="智能感知"></a>智能感知</h3><p>VS Code本身自带JS代码提示和自动补全功能，当然，如果你觉得不够用，还可以安装各种intelligence或者snippets插件来满足需求。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/js-intelligence.png" alt="JS智能提示"></p>
+<h3 id="Format-Document"><a href="#Format-Document" class="headerlink" title="Format Document"></a>Format Document</h3><p>对于压缩的代码，或者格式不够规范的代码文件，可以通过这个命令一键格式化代码。当然，这个功能是每个编辑器应该都有的，并不是亮点。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/format-document.png" alt="Fromat Document"></p>
+<h3 id="Auto-Save"><a href="#Auto-Save" class="headerlink" title="Auto Save"></a>Auto Save</h3><p>自动保存功能也是大部分优秀的编辑器应该必备的。我认为VS Code里做的比较人性化的一个点是，它的设置选项里提供了四种自动保存的时机供我们选择：<strong>off</strong>、<strong>afterDelay</strong>、<strong>onFocusChange</strong>(编辑器失去焦点)、<strong>onWindowChange</strong>(窗口失去焦点)。如果设置为<strong>afterDelay</strong>，则可在 <code>files.autoSaveDelay</code> 中配置延迟。我比较喜欢<strong>onWindowChange</strong>。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/auto-save.png" alt="Auto Save"></p>
+<h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><p>VS Code自带打开Terminal的功能，这是Atom和Sublime所不具备的。这也算是VS Code的一大亮点。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/terminal.png" alt="Terminal"></p>
+<h2 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h2><p>接下来，推荐一些我用到过的非常实用的插件，帮助你编程时候事半功倍！</p>
+<h3 id="Git-History"><a href="#Git-History" class="headerlink" title="Git History"></a><a href="https://github.com/DonJayamanne/gitHistoryVSCode" target="_blank" rel="noopener">Git History</a></h3><p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/git-history.gif" alt="Git History"></p>
+<p>可以查看一个文件的所有提交记录，同时还可以调出一个可视化的界面展示文件的提交记录，是git log的强化版。还可以查看某一行的所有提交记录。</p>
+<h3 id="Git-Peoject-Manager"><a href="#Git-Peoject-Manager" class="headerlink" title="Git Peoject Manager"></a><a href="https://github.com/felipecaputo/git-project-manager" target="_blank" rel="noopener">Git Peoject Manager</a></h3><p>这是一个git项目管理的插件，一共就4个命令：</p>
+<ul>
+<li><strong>GPM: Open Git Project (Ctrl+Alt+P)</strong>：打开git项目</li>
+<li><strong>GPM: Refresh Projects</strong>：刷新git项目</li>
+<li><strong>GPM: Refresh specific project folder</strong>：刷新特定路径下的git项目</li>
+<li><strong>GPM: Open Recent Git Project (Ctrl+Shift+Q)</strong>：最近打开的git项目列表</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/git-project-manager.gif" alt="Git Project Manager"></p>
+<p>插件的使用也很简单，找到配置文件中<code>gitProjectManager.baseProjectsFolders</code>把git项目的根目录放进去，就像下边这样：<br><code>{
+    &quot;gitProjectManager.baseProjectsFolders&quot;: [
+        &quot;/home/user/nodeProjects&quot;,
+        &quot;/home/user/personal/pocs&quot;
+    ]
+}</code></p>
+<p>然后<code>cmd + shift + P</code>调出命令栏，并输入<code>GPM</code>，上述的4个命令就被列出来了，选择<code>Refresh Projects</code>，稍等一会儿后，被我们添加到配置文件里的路径下的所有git项目都会被列出来。选择你的工作目录开始Coding吧！</p>
+<h3 id="Git-Lens"><a href="#Git-Lens" class="headerlink" title="Git Lens"></a><a href="https://github.com/eamodio/vscode-gitlens" target="_blank" rel="noopener">Git Lens</a></h3><p>这是一款非常强大的git插件，它提供的每一个功能，都戳中了我们日常开发中的需求痛点。所以，我强烈推荐大家安装并使用这款插件。先目睹一下它的功能概览gif图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/806919-0c09d650b1b21143.gif?imageMogr2/auto-orient/strip" alt="gitlens-preview.gif"></p>
+<h5 id="Code-Lens"><a href="#Code-Lens" class="headerlink" title="Code Lens"></a>Code Lens</h5><p>在文件的顶部展示代码变更的总的记录，包括左边的最新修改记录以及右边的所有的修改作者数量。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/git-lens.gif" alt="Code Lens"></p>
+<h5 id="Blame-Annotations"><a href="#Blame-Annotations" class="headerlink" title="Blame Annotations"></a>Blame Annotations</h5><p>点击右边的作者数量可以进入整个文件的Blame Annotations。这里展示了每一行的最后一条修改记录，具体的展示方式可以在设置里自己配置，包括作者、时间和commit信息。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/blame-annotations.png" alt="Blame Annotations"></p>
+<h5 id="Status-Bar-Blame"><a href="#Status-Bar-Blame" class="headerlink" title="Status Bar Blame"></a>Status Bar Blame</h5><p>这个是指在状态栏里展示当前光标所在行的Git Blame信息。当然这里要展示的信息和格式也是可以配置的。这样，光标所在的行的最新git记录和作者信息完全展示在了状态栏里。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/status-bar-blame.png" alt="Status Bar Blame"></p>
+<h5 id="Interactive-Blame"><a href="#Interactive-Blame" class="headerlink" title="Interactive Blame"></a>Interactive Blame</h5><p>这个功能和Status Bar Status类似，只不过，git信息是直接展示在文件中的代码后边。鼠标悬停在git记录上时，会有更详细的git变更气泡弹出。就像下边这样：</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/interactive-blame.png" alt="Interactive Blame"></p>
+<h5 id="Quick-Menu"><a href="#Quick-Menu" class="headerlink" title="Quick Menu"></a>Quick Menu</h5><p>快捷键<code>shift + alt + H</code>调出<strong>branch history quick pick menu</strong>，  这个菜单功能非常强大，我们可以查看之前的commits信息、所有commits信息、根据message/author/filename搜索commits信息、查看一些文件的历史记录等。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/quick-menu.png" alt="Quick Menu"></p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-messages.png" alt="Search by messages"></p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-author01.png" alt="Search by autor 01"></p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-author02.png" alt="Search by autor 02"></p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-filename01.png" alt="Search by filename 01"></p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/search-by-filename02.png" alt="Search by filename 02"></p>
+<p>通过message查找时，直接在输入框里输入message的关键信息即可。通过author查找时，则是输入<code>@author</code>，类似于图中的<code>@Zeke</code>。而通过filename查找，则需要注意一下，这里应该是<code>: filepath</code>，也就是相对于当前项目根目录的相对路径。类似于图中的<code>:lib/browser/chrome-extension.js</code>。除了这些之外，还可以根据commit id查找，这个用的不多，这里就不再举例了。</p>
+<h3 id="Project-Manager"><a href="#Project-Manager" class="headerlink" title="Project Manager"></a><a href="https://github.com/alefragnani/vscode-project-manager" target="_blank" rel="noopener">Project Manager</a></h3><p>项目管理插件，这个功能和Git Project Manager有点类似，只不过，这个不但能管理git项目，还可以管理其他项目。</p>
+<p><img src="https://raw.githubusercontent.com/maplecumt/blogImages/master/2017-07-12-vscode-introduction/project-manager-commands.png" alt="Project Manager"></p>
+<p>这个插件一共5个命令：</p>
+<ul>
+<li><strong>Project Manager: Edit Project Edit</strong> 跳转到配置文件 projects.json 进行项目列表目录的配置修改。</li>
+<li><strong>Project Manager: List Projects</strong> 列出已经保存的项目列表。</li>
+<li><strong>Project Manager: List Projects to Open in New Window</strong> 列出已保存的项目列表并在新窗口打开选中的项目。</li>
+<li><strong>Project Manager: Refresh Projects</strong> 刷新项目列表。</li>
+<li><strong>Project Manager: Save Project</strong> 保存当前项目到项目列表。</li>
+</ul>
+<h3 id="其他插件"><a href="#其他插件" class="headerlink" title="其他插件"></a>其他插件</h3><p>其他的一些插件就不做详细介绍了，这里列出我用过的感觉比较好的，大家自己到github上查阅吧。<a href="https://github.com/vscode-icons/vscode-icons" target="_blank" rel="noopener">vscode-icons</a>、<a href="https://github.com/zhaopengme/vscode-fileheader" target="_blank" rel="noopener">vscode-fileheader</a>、<a href="https://github.com/joelday/vscode-docthis" target="_blank" rel="noopener">Document This</a>、<a href="https://github.com/pranaygp/vscode-css-peek" target="_blank" rel="noopener">CSS Peek</a>、<a href="https://github.com/abierbaum/vscode-file-peek" target="_blank" rel="noopener">File Peek</a>、<a href="https://github.com/yzane/vscode-markdown-pdf" target="_blank" rel="noopener">Markdown PDF</a>、<a href="https://github.com/shd101wyy/vscode-markdown-preview-enhanced" target="_blank" rel="noopener">Markdown Preview Enhanced</a>、<a href="https://github.com/kogai/vscode-regex-railroad-diagrams" target="_blank" rel="noopener">Regex Railroad Diagrams</a>。</p>
+<p>如果还有其他比较好用或者有意思的插件，欢迎大家前来留言。一起讨论交流。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/WeChat.jpg',
+  alipayImage: 'https://raw.githubusercontent.com/maplecumt/blogImages/master/QrCode/Alipay.jpg'
+});
+</script>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VS-Code/">VS Code</a></li></ul>
+
+    </footer>
+    <div id="gitMentContainer"></div>    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/21/2017-07-21-raining-night/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          夜雨
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/09/2017-07-09-south-lake-at-dusk/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">南湖向晚</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">2.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自带功能"><span class="nav-number">3.</span> <span class="nav-text">自带功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Emmet"><span class="nav-number">3.1.</span> <span class="nav-text">Emmet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#智能感知"><span class="nav-number">3.2.</span> <span class="nav-text">智能感知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Format-Document"><span class="nav-number">3.3.</span> <span class="nav-text">Format Document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Auto-Save"><span class="nav-number">3.4.</span> <span class="nav-text">Auto Save</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Terminal"><span class="nav-number">3.5.</span> <span class="nav-text">Terminal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件推荐"><span class="nav-number">4.</span> <span class="nav-text">插件推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-History"><span class="nav-number">4.1.</span> <span class="nav-text">Git History</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-Peoject-Manager"><span class="nav-number">4.2.</span> <span class="nav-text">Git Peoject Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-Lens"><span class="nav-number">4.3.</span> <span class="nav-text">Git Lens</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Code-Lens"><span class="nav-number">4.3.0.1.</span> <span class="nav-text">Code Lens</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Blame-Annotations"><span class="nav-number">4.3.0.2.</span> <span class="nav-text">Blame Annotations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Status-Bar-Blame"><span class="nav-number">4.3.0.3.</span> <span class="nav-text">Status Bar Blame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Interactive-Blame"><span class="nav-number">4.3.0.4.</span> <span class="nav-text">Interactive Blame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Quick-Menu"><span class="nav-number">4.3.0.5.</span> <span class="nav-text">Quick Menu</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Project-Manager"><span class="nav-number">4.4.</span> <span class="nav-text">Project Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他插件"><span class="nav-number">4.5.</span> <span class="nav-text">其他插件</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+<script>
+  $('.article-excerpt-container').on('click', function() {
+    // location.href = $(this).attr('href');
+  })
+  $('.article-excerpt-container img').on('click', function() {
+    location.href = $(this).parents('.article-excerpt-container').attr('href');
+    return false;
+  })
+</script>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var href = location.href.match(/(\w+-)+\w+/);
+  var title = href && href[0];
+  var gitment = new Gitment({
+    id: '', // 可选。默认为 location.href 有长度限制
+    owner: 'maplecumt', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'maplecumt.github.io',
+    oauth: {
+      client_id: '6c8c348b3238fe2cfee0',
+      client_secret: '4ad17033a420c4ff653100c6553d6a43cefd1134',
+    },
+  })
+  gitment.render('gitMentContainer')
+</script>
+
+  <canvas id="live2dcanvas" width="300" height="600" class="live2d"></canvas>
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/haruto.model.json", 0.5);});
+})();
+</script>
+
+
+<style>
+.live2d{
+  position: fixed;
+	bottom: -30px;
+	left: 0px;
+	z-index: 999;
+	width: 150px;
+	height: 300px;
+  pointer-events: none;
+}
+#live2dcanvas {
+  opacity: 1;
+}
+</style></section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Maple&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<!--  <p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+          -->
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Maple&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 maple.yf All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
